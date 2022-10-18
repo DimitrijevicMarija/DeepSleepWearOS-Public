@@ -5,7 +5,7 @@ Communicates with the mobile application, which is responsible for detailed visu
 
 Using Health Services in order to collect data about sleep. Afterward, sleep data is sent to the paired mobile device. <br>
 Users can navigate through a simple list of the last few sleep states (by scrolling to the left or right). For each sleep, there is information about duration, start, and end.
-The most recent sleep is represented with the largest font, while as we go further the font gradually becomes smaller.
+The most recent sleep is represented with the largest font. As we go further the font gradually becomes smaller.
 
 <br>
 
