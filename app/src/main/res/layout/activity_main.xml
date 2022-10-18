@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.DismissibleFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dismiss_overlay"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+
+    tools:context=".MainActivity"
+    tools:deviceIds="wear"
+    android:background="@drawable/stars"
+
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+
+    >
+
+    <requestFocus
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:layout_boxedEdges="all">
+
+            <TextView
+                android:id="@+id/sleep_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unknown"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:textSize="@dimen/sleep_duration_text_size"
+                android:textColor="@color/white"
+            />
+
+            <ImageView
+                android:id="@+id/moon_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/sleep_duration"
+
+                android:src="@drawable/bedtime_24px"
+                android:contentDescription="@string/image_description"
+            />
+
+            <TextView
+                android:id="@+id/separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/separator"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sleep_duration"
+                android:textSize="@dimen/time_text_size"
+
+            />
+            <TextView
+                android:id="@+id/start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unknown"
+
+                app:layout_constraintRight_toLeftOf="@id/separator"
+                app:layout_constraintTop_toBottomOf="@id/sleep_duration"
+                android:textSize="@dimen/time_text_size"
+
+                />
+            <TextView
+                android:id="@+id/end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unknown"
+
+                app:layout_constraintLeft_toRightOf="@id/separator"
+                app:layout_constraintTop_toBottomOf="@id/sleep_duration"
+                android:textSize="@dimen/time_text_size"
+                />
+
+            <TextView
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unknown"
+
+                app:layout_constraintLeft_toLeftOf="@id/start_time"
+                app:layout_constraintRight_toRightOf="@id/start_time"
+                app:layout_constraintTop_toBottomOf="@id/start_time"
+                android:textSize="@dimen/date_text_size"
+
+                />
+            <TextView
+                android:id="@+id/end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unknown"
+
+                app:layout_constraintLeft_toLeftOf="@id/end_time"
+                app:layout_constraintRight_toRightOf="@id/end_time"
+                app:layout_constraintTop_toBottomOf="@id/end_time"
+                android:textSize="@dimen/date_text_size"
+
+                />
+
+            <TextView
+                android:id="@+id/message_no_more"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/no_more_sleeps"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="@dimen/margin_msg"
+                android:layout_marginRight="@dimen/margin_msg"
+
+                android:textSize="@dimen/msg_text_size"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:visibility="invisible"
+
+                />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.wear.widget.DismissibleFrameLayout>
+
+
+

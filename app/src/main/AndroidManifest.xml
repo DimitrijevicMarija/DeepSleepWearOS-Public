@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.proba">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!-- For receiving heart rate data. -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <!-- For getting information about activity of user during passive monitoring. -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+
+    <!-- When an app targets Android 11 (API level 30) or higher and queries for information about
+         the other apps that are installed on a device, the system filters this information by
+         default. Adding the query field allows Health Services to recognize the app.
+    -->
+    <queries>
+        <package android:name="com.google.android.wearable.healthservices" />
+    </queries>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/rsz_koalica"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyAppTheme">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+
+        </activity>
+
+
+        <!-- Receiver that gets notified of new data in the background. -->
+        <receiver
+            android:name="com.example.proba.PassiveDataReceiver"
+            android:exported="true"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="hs.passivemonitoring.DATA" />
+            </intent-filter>
+        </receiver>
+
+
+        <!-- Receiver that re-registers for background data after a device restart. -->
+        <receiver
+            android:name="com.example.proba.StartupReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

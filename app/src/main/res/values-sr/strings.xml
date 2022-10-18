@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Сан за продуктиван дан</string>
+    <string name="bpm_label">BPM:</string>
+    <string name="unknown">- -</string>
+
+    <string name="hours_label">ч</string>
+    <string name="minutes_label">м</string>
+
+    <string name="separator">&#160;-&#160;</string>
+    <string name="image_description">Спавање</string>
+
+    <string name="no_more_sleeps">Не постоји ништа више за приказивање… Превуци још једном за излазак из апликације.</string>
+
+    <string name="hello_world">Здраво коцкасти свете!</string>
+</resources>
